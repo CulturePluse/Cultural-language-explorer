@@ -1,114 +1,394 @@
-.our-story-container {
-    padding: 2rem;
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #f7f1e9;
-    color: #333;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
   }
   
-  .section-title {
+  :root {
+    --african-red: #e84118;
+    --african-orange: #f39c12;
+    --african-yellow: #f1c40f;
+    --african-brown: #8b4513;
+    --african-green: #2ecc71;
+    --african-dark: #2c3e50;
+  }
+  
+  .african-container {
+    font-family: 'Ubuntu', 'Roboto', sans-serif;
+    color: var(--african-dark);
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: #f9f3e9;
+  }
+  
+  /* Hero Section with African pattern */
+  .hero-section {
     text-align: center;
-    font-size: 2rem;
-    margin-bottom: 2rem;
+    padding: 5rem 1rem;
+    margin-bottom: 3rem;
+    position: relative;
+    background-size: cover;
+    background-position: center;
   }
   
-  .mission-vision-card {
-    background: #fff;
-    display: flex;
-    justify-content: space-between;
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    gap: 1rem;
-    margin-bottom: 2rem;
+  .hero-overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 2rem;
+    border-radius: 5px;
+    display: inline-block;
   }
   
-  .mission-vision-card img {
-    width: 200px;
-    object-fit: contain;
-    border-radius: 8px;
-  }
-  
-  .text-content h3 {
-    margin-top: 0.5rem;
-    font-size: 1.2rem;
-    color: #7d4b12;
-  }
-  
-  .text-content p {
+  .hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
     margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .hero-subtitle {
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--african-yellow);
+    margin-bottom: 1.5rem;
+  }
+  
+  .african-border {
+    height: 4px;
+    background: linear-gradient(90deg, 
+      var(--african-red), 
+      var(--african-orange), 
+      var(--african-yellow), 
+      var(--african-green));
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  /* Section Titles with African decorations */
+  .section-title {
+    font-size: 2.2rem;
+    text-align: center;
+    color: var(--african-brown);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    position: relative;
+    padding: 0 1rem;
+  }
+  
+  .title-decoration {
+    color: var(--african-red);
+    margin: 0 10px;
+  }
+  
+  .section-subtitle {
+    text-align: center;
+    color: var(--african-dark);
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+  }
+  
+  /* Plans/Approach Section */
+  .plans-section {
+    margin-bottom: 4rem;
+    padding: 0 1rem;
+  }
+  
+  .plans-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .plan-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+    border: 2px solid var(--african-orange);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .plan-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, 
+      var(--african-red), 
+      var(--african-orange), 
+      var(--african-yellow));
+  }
+  
+  .plan-card:hover {
+    transform: translateY(-10px) scale(1.02);
+  }
+  
+  .card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--african-brown);
+  }
+  
+  .plan-card h3 {
+    color: var(--african-dark);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .plan-card p {
+    color: #555;
     font-size: 1rem;
   }
   
-  .sub-section-title {
-    text-align: center;
-    margin: 2rem 0 1rem;
-    font-size: 1.5rem;
+  /* Story Section with patterns */
+  .story-section {
+    display: flex;
+    margin-bottom: 4rem;
+    align-items: center;
   }
   
-  .map-card {
-    background: #fff;
-    padding: 1rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  .pattern-left, .pattern-right {
+    flex: 1;
+    min-height: 200px;
+    background-color: var(--african-red);
+    opacity: 0.2;
+    position: relative;
+  }
+  
+  .pattern-left {
+    background: linear-gradient(90deg, 
+      rgba(232, 65, 24, 0.1), 
+      rgba(232, 65, 24, 0.3));
+    clip-path: polygon(0 0, 100% 0, 70% 100%, 0 100%);
+  }
+  
+  .pattern-right {
+    background: linear-gradient(90deg, 
+      rgba(232, 65, 24, 0.3), 
+      rgba(232, 65, 24, 0.1));
+    clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);
+  }
+  
+  .story-content {
+    flex: 3;
+    padding: 0 2rem;
     text-align: center;
   }
   
-  .map-card img {
-    width: 100%;
-    max-width: 500px;
+  .intro-text {
+    font-size: 1.1rem;
+    color: var(--african-dark);
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Mission/Vision with Ndebele patterns */
+  .mission-vision-card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 4rem;
+    padding: 0 1rem;
+  }
+  
+  .text-content {
+    flex: 1;
+    min-width: 300px;
+    padding: 2rem;
     border-radius: 8px;
-    margin-bottom: 1rem;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .ndebele-pattern {
+    background-color: white;
+    border: 2px solid var(--african-yellow);
+  }
+  
+  .ndebele-pattern::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border: 2px dashed var(--african-orange);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  
+  .text-content h3 {
+    font-size: 1.6rem;
+    color: var(--african-red);
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .text-content h3::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--african-yellow);
+  }
+  
+  .text-content p {
+    font-size: 1.1rem;
+    color: var(--african-dark);
+    line-height: 1.8;
+  }
+  
+  /* Map Section */
+  .map-section {
+    margin-bottom: 4rem;
+    padding: 0 1rem;
+  }
+  
+  .map-container {
+    background: white;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--african-green);
+  }
+  
+  .map-image {
+    width: 100%;
+    max-width: 700px;
+    border-radius: 4px;
+    margin: 0 auto 1.5rem;
+    display: block;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
   }
   
   .legend {
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
-    font-size: 0.9rem;
+    gap: 2rem;
+    flex-wrap: wrap;
+    font-size: 1rem;
+    color: var(--african-dark);
   }
   
   .dot {
-    height: 12px;
-    width: 12px;
+    height: 15px;
+    width: 15px;
     border-radius: 50%;
     display: inline-block;
-    margin-right: 0.4rem;
+    margin-right: 0.5rem;
+    vertical-align: middle;
   }
   
-  .dot.isiZulu {
-    background-color: #6a4e77;
-  }
+  .dot.isiZulu { background-color: var(--african-red); }
+  .dot.Sesotho { background-color: var(--african-yellow); }
+  .dot.isiXhosa { background-color: var(--african-dark); }
   
-  .dot.Sesotho {
-    background-color: #e0b55b;
-  }
-  
-  .dot.isiXhosa {
-    background-color: #393e46;
+  /* Testimonials with African borders */
+  .testimonials-section {
+    margin-bottom: 4rem;
+    padding: 0 1rem;
   }
   
   .testimonials {
     display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-    margin-top: 1.5rem;
+    justify-content: center;
+    gap: 2rem;
     flex-wrap: wrap;
+    margin-top: 2rem;
   }
   
   .testimonial-card {
-    background: #fff;
-    flex: 1;
-    min-width: 200px;
-    max-width: 300px;
-    padding: 1rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
+    max-width: 350px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .testimonial-border-top, .testimonial-border-bottom {
+    height: 4px;
+    background: linear-gradient(90deg, 
+      var(--african-red), 
+      var(--african-orange), 
+      var(--african-yellow));
+    width: 100%;
+    margin: -2rem -2rem 1.5rem -2rem;
+  }
+  
+  .testimonial-border-bottom {
+    margin: 1.5rem -2rem -2rem -2rem;
   }
   
   .testimonial-card p {
     font-style: italic;
-    font-size: 0.95rem;
-    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+    color: var(--african-dark);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
   }
   
+  .testimonial-card strong {
+    color: var(--african-red);
+    font-weight: 700;
+    display: block;
+    margin-top: 1rem;
+  }
+  
+  .testimonial-card small {
+    color: var(--african-brown);
+    font-size: 0.9rem;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.3rem;
+    }
+    
+    .section-title {
+      font-size: 1.8rem;
+    }
+    
+    .story-section {
+      flex-direction: column;
+    }
+    
+    .pattern-left, .pattern-right {
+      display: none;
+    }
+    
+    .story-content {
+      padding: 1rem;
+    }
+    
+    .plans-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .mission-vision-card {
+      flex-direction: column;
+    }
+    
+    .text-content {
+      min-width: 100%;
+    }
+  }
