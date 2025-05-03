@@ -1,394 +1,217 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  :root {
-    --african-red: #e84118;
-    --african-orange: #f39c12;
-    --african-yellow: #f1c40f;
-    --african-brown: #8b4513;
-    --african-green: #2ecc71;
-    --african-dark: #2c3e50;
-  }
-  
-  .african-container {
-    font-family: 'Ubuntu', 'Roboto', sans-serif;
-    color: var(--african-dark);
-    max-width: 1200px;
-    margin: 0 auto;
-    overflow: hidden;
-    background-color: #f9f3e9;
-  }
-  
-  /* Hero Section with African pattern */
-  .hero-section {
-    text-align: center;
-    padding: 5rem 1rem;
-    margin-bottom: 3rem;
-    position: relative;
-    background-size: cover;
-    background-position: center;
-  }
-  
-  .hero-overlay {
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 2rem;
-    border-radius: 5px;
-    display: inline-block;
-  }
-  
-  .hero-title {
-    font-size: 3rem;
-    font-weight: 700;
-    color: white;
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  }
-  
-  .hero-subtitle {
-    font-size: 1.8rem;
-    font-weight: 400;
-    color: var(--african-yellow);
-    margin-bottom: 1.5rem;
-  }
-  
-  .african-border {
-    height: 4px;
-    background: linear-gradient(90deg, 
-      var(--african-red), 
-      var(--african-orange), 
-      var(--african-yellow), 
-      var(--african-green));
-    width: 80%;
-    margin: 0 auto;
-  }
-  
-  /* Section Titles with African decorations */
-  .section-title {
-    font-size: 2.2rem;
-    text-align: center;
-    color: var(--african-brown);
-    font-weight: 700;
-    margin-bottom: 1rem;
-    position: relative;
+.african-container {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fefaf6;
+  color: #2d2d2d;
+  margin: 0;
+  padding: 0;
+}
+
+/* Hero Section */
+.hero-section {
+  background-size: cover;
+  background-position: center;
+  padding: 5rem 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.hero-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #fff;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #f6c863;
+  text-shadow: 2px 2px #3a2e2a;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  font-style: italic;
+  color: #f9eec7;
+}
+
+.african-border {
+  height: 5px;
+  width: 100px;
+  background-color: #d97d0d;
+  margin: 1.5rem auto 0;
+  border-radius: 3px;
+}
+
+/* Section Titles */
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin: 3rem 0 1rem;
+  color: #3a2e2a;
+  border-bottom: 2px solid #d97d0d;
+  display: inline-block;
+  padding-bottom: 0.25rem;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #6e5c53;
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+
+/* Plan Cards */
+.plans-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.plan-card {
+  background-color: #fff;
+  border: 2px solid #f5e4d1;
+  padding: 1.5rem;
+  width: 260px;
+  border-radius: 8px;
+  text-align: left;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.plan-card:hover {
+  transform: translateY(-5px);
+  border-left: 6px solid #c49a6c;
+}
+
+.card-icon {
+  font-size: 1.5rem;
+  color: #c49a6c;
+  margin-bottom: 0.75rem;
+}
+
+/* Story Section */
+.story-section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.story-columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.story-column {
+  flex: 1 1 300px;
+  background-color: #fffdf7;
+  padding: 1.5rem;
+  border-left: 6px solid #d97d0d;
+  border-radius: 8px;
+  line-height: 1.75;
+  font-size: 1rem;
+  color: #4d3c35;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+/* Map Section */
+.map-section {
+  padding: 3rem 2rem;
+  text-align: center;
+  background-color: #fdf8f3;
+}
+
+.map-image {
+  max-width: 90%;
+  height: auto;
+  border: 1px solid #d9c8b8;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.legend {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+.dot.isiZulu {
+  background-color: #d97d0d;
+}
+
+.dot.Sesotho {
+  background-color: #3a7a3a;
+}
+
+.dot.isiXhosa {
+  background-color: #4b4b91;
+}
+
+/* Testimonials */
+.testimonials-section {
+  background-color: #fffdfb;
+  padding: 2.5rem 2rem;
+}
+
+.testimonials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.testimonial-card {
+  background-color: #fefefe;
+  border-left: 5px solid #c49a6c;
+  padding: 1.25rem;
+  border-radius: 8px;
+  max-width: 300px;
+  font-size: 0.95rem;
+  color: #3f3f3f;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  text-align: center;
+}
+
+.testimonial-border-top,
+.testimonial-border-bottom {
+  height: 4px;
+  width: 60px;
+  background-color: #d97d0d;
+  margin: 0.5rem auto;
+  border-radius: 2px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .story-columns {
+    flex-direction: column;
     padding: 0 1rem;
   }
-  
-  .title-decoration {
-    color: var(--african-red);
-    margin: 0 10px;
-  }
-  
-  .section-subtitle {
-    text-align: center;
-    color: var(--african-dark);
-    margin-bottom: 2rem;
-    font-size: 1.2rem;
-  }
-  
-  /* Plans/Approach Section */
-  .plans-section {
-    margin-bottom: 4rem;
-    padding: 0 1rem;
-  }
-  
-  .plans-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-  }
-  
+
   .plan-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s ease;
-    border: 2px solid var(--african-orange);
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .plan-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 5px;
-    background: linear-gradient(90deg, 
-      var(--african-red), 
-      var(--african-orange), 
-      var(--african-yellow));
-  }
-  
-  .plan-card:hover {
-    transform: translateY(-10px) scale(1.02);
-  }
-  
-  .card-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: var(--african-brown);
-  }
-  
-  .plan-card h3 {
-    color: var(--african-dark);
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  .plan-card p {
-    color: #555;
-    font-size: 1rem;
-  }
-  
-  /* Story Section with patterns */
-  .story-section {
-    display: flex;
-    margin-bottom: 4rem;
-    align-items: center;
-  }
-  
-  .pattern-left, .pattern-right {
-    flex: 1;
-    min-height: 200px;
-    background-color: var(--african-red);
-    opacity: 0.2;
-    position: relative;
-  }
-  
-  .pattern-left {
-    background: linear-gradient(90deg, 
-      rgba(232, 65, 24, 0.1), 
-      rgba(232, 65, 24, 0.3));
-    clip-path: polygon(0 0, 100% 0, 70% 100%, 0 100%);
-  }
-  
-  .pattern-right {
-    background: linear-gradient(90deg, 
-      rgba(232, 65, 24, 0.3), 
-      rgba(232, 65, 24, 0.1));
-    clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);
-  }
-  
-  .story-content {
-    flex: 3;
-    padding: 0 2rem;
-    text-align: center;
-  }
-  
-  .intro-text {
-    font-size: 1.1rem;
-    color: var(--african-dark);
-    line-height: 1.8;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  /* Mission/Vision with Ndebele patterns */
-  .mission-vision-card {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: center;
-    margin-bottom: 4rem;
-    padding: 0 1rem;
-  }
-  
-  .text-content {
-    flex: 1;
-    min-width: 300px;
-    padding: 2rem;
-    border-radius: 8px;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .ndebele-pattern {
-    background-color: white;
-    border: 2px solid var(--african-yellow);
-  }
-  
-  .ndebele-pattern::after {
-    content: "";
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    right: 10px;
-    bottom: 10px;
-    border: 2px dashed var(--african-orange);
-    border-radius: 4px;
-    pointer-events: none;
-  }
-  
-  .text-content h3 {
-    font-size: 1.6rem;
-    color: var(--african-red);
-    margin-bottom: 1.5rem;
-    position: relative;
-    display: inline-block;
-  }
-  
-  .text-content h3::after {
-    content: "";
-    position: absolute;
-    bottom: -8px;
-    left: 0;
-    width: 50px;
-    height: 3px;
-    background: var(--african-yellow);
-  }
-  
-  .text-content p {
-    font-size: 1.1rem;
-    color: var(--african-dark);
-    line-height: 1.8;
-  }
-  
-  /* Map Section */
-  .map-section {
-    margin-bottom: 4rem;
-    padding: 0 1rem;
-  }
-  
-  .map-container {
-    background: white;
-    border-radius: 8px;
-    padding: 2rem;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    border: 2px solid var(--african-green);
-  }
-  
-  .map-image {
     width: 100%;
-    max-width: 700px;
-    border-radius: 4px;
-    margin: 0 auto 1.5rem;
-    display: block;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    max-width: 320px;
   }
-  
+
   .legend {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-    font-size: 1rem;
-    color: var(--african-dark);
+    flex-direction: column;
+    align-items: flex-start;
   }
-  
-  .dot {
-    height: 15px;
-    width: 15px;
-    border-radius: 50%;
-    display: inline-block;
-    margin-right: 0.5rem;
-    vertical-align: middle;
-  }
-  
-  .dot.isiZulu { background-color: var(--african-red); }
-  .dot.Sesotho { background-color: var(--african-yellow); }
-  .dot.isiXhosa { background-color: var(--african-dark); }
-  
-  /* Testimonials with African borders */
-  .testimonials-section {
-    margin-bottom: 4rem;
-    padding: 0 1rem;
-  }
-  
-  .testimonials {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-    margin-top: 2rem;
-  }
-  
-  .testimonial-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    max-width: 350px;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .testimonial-border-top, .testimonial-border-bottom {
-    height: 4px;
-    background: linear-gradient(90deg, 
-      var(--african-red), 
-      var(--african-orange), 
-      var(--african-yellow));
-    width: 100%;
-    margin: -2rem -2rem 1.5rem -2rem;
-  }
-  
-  .testimonial-border-bottom {
-    margin: 1.5rem -2rem -2rem -2rem;
-  }
-  
-  .testimonial-card p {
-    font-style: italic;
-    font-size: 1.1rem;
-    color: var(--african-dark);
-    line-height: 1.8;
-    margin-bottom: 1.5rem;
-  }
-  
-  .testimonial-card strong {
-    color: var(--african-red);
-    font-weight: 700;
-    display: block;
-    margin-top: 1rem;
-  }
-  
-  .testimonial-card small {
-    color: var(--african-brown);
-    font-size: 0.9rem;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .hero-title {
-      font-size: 2rem;
-    }
-    
-    .hero-subtitle {
-      font-size: 1.3rem;
-    }
-    
-    .section-title {
-      font-size: 1.8rem;
-    }
-    
-    .story-section {
-      flex-direction: column;
-    }
-    
-    .pattern-left, .pattern-right {
-      display: none;
-    }
-    
-    .story-content {
-      padding: 1rem;
-    }
-    
-    .plans-grid {
-      grid-template-columns: 1fr;
-    }
-    
-    .mission-vision-card {
-      flex-direction: column;
-    }
-    
-    .text-content {
-      min-width: 100%;
-    }
-  }
+}
