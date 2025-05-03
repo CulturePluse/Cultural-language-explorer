@@ -1,7 +1,7 @@
 import React from 'react';
 /*import '../components/Home.css';*/
 import cultureImage from '../../assets/woman-pic.png'; 
-import mapImage from '../../assets/Stylized Turquoise Africa Map.png'; 
+import mapImage from '../../assets/Africa-Map.png'; 
 
 const Home = () => {
   return (
