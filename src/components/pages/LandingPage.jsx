@@ -1,15 +1,20 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import djembe-3-296679 from '../assets/audio/djembe-3-296679.mp3';
-import vite from '/vite.svg';
+/*import djembeAudio from './djembe-3-296679.mp3';*/
 
 const languages = [
-  "IsiZulu", "IsiXhosa", "Afrikaans", "Sepedi", 
-  "Setswana", "English", "Sesotho", "Xitsonga", 
-  "Siswati", "Tshivenda", "IsiNdebele"
+  {English:"Hello"},
+  {IsiZulu:"Sawubona"}, 
+  {IsiNdebel:"Lotjhani"}, 
+  {Afrikaans:"Goeie More"}, 
+  {SePedi:"Dumela"}, 
+  {SeSotho:"Thobela"}, 
+  {IsiXhosa:"Molo"}, 
+  {XiTsonga:"Avuxeni"},
+  {TshiVenda:"Ndaa","Aa"} 
 ];
 
-const LangingPage = () => {
+const LandingPage = () => {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -21,9 +26,9 @@ const LangingPage = () => {
   }, []);
 
   useEffect(() => {
-    const audio = new Audio("/djembe-3-296679.mp3"); 
+    const audio = new Audio("/djembe-3-296679.mp3" );
     audio.loop = true;  // Enable looping
-    audio.play();
+    audio.play().catch(error => console.error("Audio playback error:", error));
   }, []);
 
   return (
