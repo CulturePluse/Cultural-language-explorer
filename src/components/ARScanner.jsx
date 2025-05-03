@@ -1,15 +1,18 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { FaCamera, FaLanguage } from 'react-icons/fa';
-import './ARScanner.css';
+import { QRCodeSVG } from 'qrcode.react';
 
 const ARScanner = () => {
   const [scannerActive, setScannerActive] = useState(false);
   const [capturedImage, setCapturedImage] = useState(null);
   const [recognitionResult, setRecognitionResult] = useState('');
   const [selectedLanguage, setSelectedLanguage] = useState('Swahili');
+  const [error, setError] = useState(null);
 
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
+
+  const qrCodeUrl = `${window.location.origin}/ARScanner/`;
 
   const modelDatabase = [
     {
@@ -29,78 +32,82 @@ const ARScanner = () => {
   const languages = ['Swahili', 'Yoruba', 'Zulu', 'Hausa', 'Igbo', 'Amharic', 'Shona', 'Oromo'];
 
   const startScanner = async () => {
-    setScannerActive(true);
     try {
+      setScannerActive(true);
       const stream = await navigator.mediaDevices.getUserMedia({ video: true });
       if (videoRef.current) {
         videoRef.current.srcObject = stream;
-        videoRef.current.play();
       }
     } catch (err) {
-      alert("Camera access denied. Please allow access.");
+      setError("Camera access denied. Please allow access.");
+      setScannerActive(false);
     }
   };
 
   const captureAndProcess = () => {
-    if (videoRef.current && canvasRef.current) {
-      const context = canvasRef.current.getContext('2d');
-      canvasRef.current.width = videoRef.current.videoWidth;
-      canvasRef.current.height = videoRef.current.videoHeight;
-      context.drawImage(videoRef.current, 0, 0);
-      const imageDataUrl = canvasRef.current.toDataURL('image/png');
-      setCapturedImage(imageDataUrl);
-      const stream = videoRef.current.srcObject;
-      stream.getTracks().forEach(track => track.stop());
-      setScannerActive(false);
-      const randomObject = modelDatabase[Math.floor(Math.random() * modelDatabase.length)];
-      const translation = randomObject.translations[selectedLanguage];
-      setRecognitionResult(`Recognized: ${randomObject.name} (${selectedLanguage}: ${translation})`);
+    try {
+      if (videoRef.current && canvasRef.current) {
+        const context = canvasRef.current.getContext('2d');
+        canvasRef.current.width = videoRef.current.videoWidth;
+        canvasRef.current.height = videoRef.current.videoHeight;
+        context.drawImage(videoRef.current, 0, 0);
+
+        const stream = videoRef.current.srcObject;
+        if (stream) {
+          stream.getTracks().forEach(track => track.stop());
+        }
+
+        setScannerActive(false);
+        const randomObject = modelDatabase[Math.floor(Math.random() * modelDatabase.length)];
+        const translation = randomObject.translations[selectedLanguage] || 'Translation not available';
+        setRecognitionResult(`Recognized: ${randomObject.name} (${selectedLanguage}: ${translation})`);
+      }
+    } catch (err) {
+      setError("Error processing image: " + err.message);
     }
   };
 
-  return (
-    <div className="scanner-container">
-      <h1>AR Language Scanner</h1>
-      <div className="scanner-grid">
-        <div className="how-it-works">
-          <h2>How It Works</h2>
-          <ul>
-            <li><FaCamera /> Point your camera at any object or text in your environment</li>
-            <li><span>✏️</span> Our AR system will recognize the object or text</li>
-            <li><FaLanguage /> See the translation in your chosen African language instantly</li>
-          </ul>
-        </div>
+  if (error) {
+    return (
+      <div>
+        <h2>Error</h2>
+        <p>{error}</p>
+        <button onClick={() => setError(null)}>Try Again</button>
+      </div>
+    );
+  }
 
-        <div className="scanner-panel">
-          <button onClick={startScanner}><span>▶</span> Start Scanner</button>
-          <div className="tips">
-            <h3>Tips</h3>
-            <ul>
-              <li>💡 Ensure good lighting for better recognition</li>
-              <li>✲ Hold your device steady</li>
-              <li>🖼 Keep objects within frame</li>
-            </ul>
-          </div>
-        </div>
+  return (
+    <div style={{ padding: 20 }}>
+      <h1>AR Language Scanner</h1>
+
+      <div>
+        <button onClick={startScanner}><FaCamera /> Start Scanner</button>
       </div>
 
       {scannerActive && (
-        <div className="camera-area">
-          <video ref={videoRef} autoPlay playsInline muted />
+        <>
+          <video ref={videoRef} autoPlay playsInline muted style={{ width: 400 }} />
           <canvas ref={canvasRef} style={{ display: 'none' }} />
-          <button onClick={captureAndProcess} className="capture-btn">Capture Object</button>
+          <button onClick={captureAndProcess}>Capture</button>
+        </>
+      )}
+
+      {!scannerActive && (
+        <div style={{ marginTop: 20 }}>
+          <QRCodeSVG value={qrCodeUrl} size={200} />
         </div>
       )}
 
       {capturedImage && (
-        <div className="result">
-          <img src={capturedImage} alt="Captured" />
+        <div>
+          <img src={capturedImage} alt="Captured" width="300" />
           <p>{recognitionResult}</p>
         </div>
       )}
 
-      <div className="lang-dropdown">
-        <label>Select Language: </label>
+      <div style={{ marginTop: 20 }}>
+        <label><FaLanguage /> Choose Language: </label>
         <select value={selectedLanguage} onChange={(e) => setSelectedLanguage(e.target.value)}>
           {languages.map(lang => (
             <option key={lang} value={lang}>{lang}</option>
