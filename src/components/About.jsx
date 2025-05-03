@@ -1,6 +1,6 @@
 import React from 'react';
 import './About.css';
-import Map from '../assets/MAP.png';
+import Map from '../assets/MapOfSA.png';
 import AfricanPattern from '../assets/african.png'; // Add an African pattern background
 
 const About = () => {
@@ -73,10 +73,7 @@ const About = () => {
         </h2>
         <div className="map-container">
           <img src={Map} alt="Language Distribution Map" className="map-image" />
-          <div className="legend">
-            <div><span className="dot isiZulu"></span> isiZulu</div>
-            <div><span className="dot Sesotho"></span> Sesotho</div>
-            <div><span className="dot isiXhosa"></span> isiXhosa</div>
+            <div className="legend">
           </div>
         </div>
       </section>
