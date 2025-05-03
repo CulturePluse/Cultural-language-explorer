@@ -4,15 +4,16 @@ import { motion } from "framer-motion";
 /*import djembeAudio from './djembe-3-296679.mp3';*/
 
 const languages = [
-  {lang: "English", greeting:"Hello"},
-  {lang: "IsiZulu", greeting: "Sawubona"}, 
-  {lang: "IsiNdebele", greeting: "Lotjhani"}, 
-  {lang: "Afrikaans", greeting: "Goeie More"}, 
-  {lang: "SePedi", greeting: "Dumela"}, 
-  {lang: "SeSotho", greeting: "Thobela"}, 
-  {lang: "IsiXhosa", greeting: "Molo"}, 
-  {lang: "XiTsonga", greeting: "Avuxeni"},
-  {lang: "TshiVenda", greeting: ["Ndaa","Aa"]} 
+  { greeting:"Hello"},
+  {greeting: "Sawubona"}, 
+  { greeting: "Lotjhani"}, 
+  {greeting: "Goeie More"}, 
+  {greeting: "Dumela"}, 
+  { greeting: "Thobela"}, 
+  { greeting: "Molo"}, 
+  { greeting: "Avuxeni"},
+  { greeting: "Ndaa"},
+  {greeting:  "Aa"} 
 ];
 
 const LandingPage = () => {
