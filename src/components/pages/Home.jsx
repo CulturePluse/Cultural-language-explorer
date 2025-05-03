@@ -5,6 +5,7 @@ import mapImage from '../../assets/Africa-Map.png';
 
 const Home = () => {
   return (
+    
     <div className="home-container">
       {/* Hero Section */}
       <section className="hero">
