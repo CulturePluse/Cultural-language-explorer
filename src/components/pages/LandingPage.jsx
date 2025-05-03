@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 /*import djembeAudio from './djembe-3-296679.mp3';*/
@@ -11,7 +12,7 @@ const languages = [
   {lang: "SeSotho", greeting: "Thobela"}, 
   {lang: "IsiXhosa", greeting: "Molo"}, 
   {lang: "XiTsonga", greeting: "Avuxeni"},
-  {lang: "TshiVenda", greeting: "Ndaa","Aa"} 
+  {lang: "TshiVenda", greeting: ["Ndaa","Aa"]} 
 ];
 
 const LandingPage = () => {
