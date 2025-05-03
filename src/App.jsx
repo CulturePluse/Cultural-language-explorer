@@ -1,9 +1,10 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState } from 'react';
+import reactLogo from './assets/react.svg';
+import viteLogo from '/vite.svg';
 import React from "react";
-import './App.css'
+import './App.css';
 import About from './components/About';
+import Languages from './components/Languages';
 import ARScanner from './components/ARScanner';
 
 /*function App() {
@@ -40,7 +41,7 @@ export default App*/
 function App() {
   return (
     <div>
-      <ARScanner/>  {}
+      <ARScanner/>  
     </div>
   );
 }
