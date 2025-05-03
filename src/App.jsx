@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import React from "react";
 import './App.css'
 import About from './components/About';
+import ARScanner from './components/ARScanner';
 
 /*function App() {
   const [count, setCount] = useState(0)
@@ -39,7 +40,7 @@ export default App*/
 function App() {
   return (
     <div>
-      <About/>  {}
+      <ARScanner/>  {}
     </div>
   );
 }
