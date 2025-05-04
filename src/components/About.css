@@ -6,6 +6,68 @@
   padding: 0;
 }
 
+/* Navbar Styles */
+.navbar {
+  background-color: #333; /* Dark background for the navbar */
+  padding: 0; /* Remove padding, handle spacing inside navbar-content */
+  width: 100%; /* Make navbar span the full width */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between; /* Pushes brand left, links right */
+  align-items: center;
+  max-width: 1200px; /* Optional: constrain max width for very wide screens */
+  margin: 0 auto; /* Center the content */
+  padding: 0.5rem 2rem; /* Add horizontal padding */
+}
+
+.navbar-brand {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem; /* Make brand slightly larger */
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center; /* Vertically align items */
+}
+
+.nav-links li {
+  margin-left: 4rem; /* Adjust this value for the desired space after Home */
+}
+
+.nav-links li:first-child {
+  margin-left: 0; /* No margin for the first item (Home) */
+}
+
+.nav-links-right {
+  display: flex; /* Layout the right links horizontally */
+  gap: 1.5rem; /* Space between the right-aligned links */
+  margin-left: auto; /* Push this group to the far right */
+}
+
+.nav-links li a,
+.nav-links-right a {
+  color: white; /* White text for links */
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  display: block; /* Ensure links take up space for padding/hover */
+  padding: 0.5rem 0; /* Add some vertical padding if needed */
+}
+
+.nav-links li a:hover,
+.nav-links-right a:hover {
+  color: #ddd; /* Lighter color on hover */
+}
+
 /* Hero Section */
 .hero-section {
   background-size: cover;

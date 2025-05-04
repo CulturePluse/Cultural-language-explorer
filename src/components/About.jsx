@@ -3,14 +3,29 @@ import './About.css';
 import Map from '../assets/MapOfSA.png';
 import AfricanPattern from '../assets/african.png'; // Add an African pattern background
 
-
 const About = () => {
   return (
     <div className="african-container">
+      {/* Navbar */}
+      <nav className="navbar">
+        <div className="navbar-content">
+          <a href="/" className="navbar-brand">Culture Pulse</a>
+          <ul className="nav-links">
+            <li><a href="/">Home</a></li>
+            {/* Group the rest of the links */}
+            <li className="nav-links-right">
+              <a href="/about">About</a>
+              <a href="/languages">Languages</a>
+              <a href="/ar-scanner">AR Scanner</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
       {/* Hero Section */}
       <section className="hero-section" style={{ backgroundImage: `url(${AfricanPattern})` }}>
         <div className="hero-overlay tribal-overlay">
-          <h1 className="hero-title african-text">Language Vision</h1>
+          <h1 className="hero-title african-text">CULTUREPULSE</h1>
           <p className="hero-subtitle">Preserving Heritage Through Language</p>
           <div className="african-border"></div>
         </div>
