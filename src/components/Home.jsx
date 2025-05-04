@@ -1,9 +1,9 @@
 import React from 'react';
-import './About.css';
+import './Home.css';
 import Map from '../assets/MapOfSA.png';
 import AfricanPattern from '../assets/african.png'; // Add an African pattern background
 
-const About = () => {
+const Home = () => {
   return (
     <div className="african-container">
       {/* Navbar */}
@@ -14,9 +14,8 @@ const About = () => {
             <li><a href="/">Home</a></li>
             {/* Group the rest of the links */}
             <li className="nav-links-right">
-              <a href="/about">About</a>
-              <a href="/languages">Languages</a>
-              <a href="/ar-scanner">AR Scanner</a>
+              <a href="/languages"> Learn A Language</a>
+              <a href="/scanner">AR Scanner</a>
             </li>
           </ul>
         </div>
@@ -25,7 +24,7 @@ const About = () => {
       {/* Hero Section */}
       <section className="hero-section" style={{ backgroundImage: `url(${AfricanPattern})` }}>
         <div className="hero-overlay tribal-overlay">
-          <h1 className="hero-title african-text">CULTUREPULSE</h1>
+          <h1 className="hero-title african-text">CULTURE  PULSE</h1>
           <p className="hero-subtitle">Preserving Heritage Through Language</p>
           <div className="african-border"></div>
         </div>
@@ -114,4 +113,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Home;

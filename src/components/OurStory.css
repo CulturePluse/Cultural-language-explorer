@@ -1,0 +1,55 @@
+.our-story-container {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #F9E5C3;
+    color: #3B1F1F;
+    padding-bottom: 60px;
+  }
+  
+  .our-story-hero {
+    background-color: #7A3B27;
+    color: #FFE8C8;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .our-story-hero h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+  }
+  
+  .our-story-hero p {
+    font-size: 20px;
+    max-width: 600px;
+  }
+  
+  .hero-image {
+    margin-top: 20px;
+  }
+  
+  .hero-image img {
+    width: 300px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+  
+  .our-story-content {
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .our-story-content h2 {
+    font-size: 32px;
+    color: #7A3B27;
+    margin-bottom: 20px;
+  }
+  
+  .our-story-content p {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+  
