@@ -1,314 +1,191 @@
 .african-container {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #fefaf6;
-  color: #2d2d2d;
-  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #fffefb;
+  color: #2a2a2a;
+  line-height: 1.7;
   padding: 0;
+  margin: 0;
 }
 
-/* Navbar Styles */
+/* Navbar */
 .navbar {
-  background-color: #333; /* Dark background for the navbar */
-  padding: 0; /* Remove padding, handle spacing inside navbar-content */
-  width: 100%; /* Make navbar span the full width */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+  background-color: #2b2b2b;
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .navbar-content {
   display: flex;
-  justify-content: space-between; /* Pushes brand left, links right */
+  justify-content: space-between;
   align-items: center;
-  max-width: 1200px; /* Optional: constrain max width for very wide screens */
-  margin: 0 auto; /* Center the content */
-  padding: 0.5rem 2rem; /* Add horizontal padding */
+  max-width: 1200px;
+  margin: auto;
 }
 
 .navbar-brand {
-  color: white;
+  font-size: 1.75rem;
+  color: #fefefe;
+  font-weight: 700;
   text-decoration: none;
-  font-size: 1.5rem; /* Make brand slightly larger */
-  font-weight: bold;
 }
 
 .nav-links {
-  list-style: none;
-  padding: 0;
-  margin: 0;
   display: flex;
-  align-items: center; /* Vertically align items */
+  gap: 1.5rem;
 }
 
-.nav-links li {
-  margin-left: 4rem; /* Adjust this value for the desired space after Home */
-}
-
-.nav-links li:first-child {
-  margin-left: 0; /* No margin for the first item (Home) */
-}
-
-.nav-links-right {
-  display: flex; /* Layout the right links horizontally */
-  gap: 1.5rem; /* Space between the right-aligned links */
-  margin-left: auto; /* Push this group to the far right */
-}
-
-.nav-links li a,
-.nav-links-right a {
-  color: white; /* White text for links */
+.button-link {
+  background-color: #2a2a2a;
+  color: #fffdfd;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
   text-decoration: none;
-  font-size: 1rem;
-  font-weight: 500;
-  transition: color 0.3s ease;
-  display: block; /* Ensure links take up space for padding/hover */
-  padding: 0.5rem 0; /* Add some vertical padding if needed */
+  font-weight: 600;
+  transition: background 0.3s ease;
 }
 
-.nav-links li a:hover,
-.nav-links-right a:hover {
-  color: #ddd; /* Lighter color on hover */
+.button-link:hover {
+  background-color: #d97d0d;
+  color: white;
 }
 
 /* Hero Section */
 .hero-section {
   background-size: cover;
   background-position: center;
-  padding: 5rem 2rem;
-  text-align: center;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
 }
 
 .hero-overlay {
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 3rem 2rem;
-  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.65);
+  padding: 4rem 2rem;
+  text-align: center;
+  color: white;
   max-width: 800px;
-  margin: 0 auto;
-  color: #fff;
+  border-radius: 16px;
+  backdrop-filter: blur(6px);
 }
 
 .hero-title {
   font-size: 3rem;
-  font-weight: bold;
-  color: #f6c863;
-  text-shadow: 2px 2px #3a2e2a;
-  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #ffcc70, #ff7e5f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 900;
 }
 
 .hero-subtitle {
+  margin-top: 1rem;
   font-size: 1.25rem;
-  font-style: italic;
   color: #f9eec7;
 }
 
-.african-border {
-  height: 5px;
-  width: 100px;
-  background-color: #d97d0d;
-  margin: 1.5rem auto 0;
-  border-radius: 3px;
-}
-
-/* Section Titles */
+/* Section */
 .section-title {
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.25rem;
   margin: 3rem 0 1rem;
-  color: #3a2e2a;
-  border-bottom: 2px solid #d97d0d;
-  display: inline-block;
-  padding-bottom: 0.25rem;
+  color: #2a2a2a;
+  font-weight: 700;
 }
 
 .section-subtitle {
   text-align: center;
-  color: #6e5c53;
-  font-style: italic;
+  color: #666;
+  font-size: 1.1rem;
   margin-bottom: 2rem;
 }
 
-/* Plan Cards */
-.plans-grid {
+/* Cards */
+.plans-grid,
+.why-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
+  padding: 0 2rem;
+}
+
+.plan-card,
+.why-card {
+  background: white;
+  border-radius: 14px;
   padding: 2rem;
+  max-width: 280px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.plan-card {
-  background-color: #fff;
-  border: 2px solid #f5e4d1;
-  padding: 1.5rem;
-  width: 260px;
-  border-radius: 8px;
-  text-align: left;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
-}
-
-.plan-card:hover {
-  transform: translateY(-5px);
-  border-left: 6px solid #c49a6c;
+.plan-card:hover,
+.why-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
 }
 
 .card-icon {
-  font-size: 1.5rem;
-  color: #c49a6c;
-  margin-bottom: 0.75rem;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #d97d0d;
 }
 
 /* Story Section */
 .story-section {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 3rem 1rem;
+  background-color: #fdf7f2;
 }
 
 .story-columns {
   display: flex;
-  flex-wrap: wrap;
   gap: 2rem;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
 .story-column {
   flex: 1 1 300px;
-  background-color: #fffdf7;
+  background: white;
   padding: 1.5rem;
-  border-left: 6px solid #d97d0d;
-  border-radius: 8px;
-  line-height: 1.75;
-  font-size: 1rem;
-  color: #4d3c35;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  border-left: 5px solid #d97d0d;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
 }
 
 /* Map Section */
 .map-section {
+  background: #fff9f3;
   padding: 3rem 2rem;
+}
+
+.map-container {
   text-align: center;
-  background-color: #fdf8f3;
 }
 
 .map-image {
-  max-width: 90%;
+  max-width: 60%;
   height: auto;
-  border: 1px solid #d9c8b8;
-  border-radius: 6px;
-  margin-bottom: 1rem;
-}
-
-.legend {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-top: 1rem;
-  font-size: 0.95rem;
-}
-
-.dot {
-  height: 12px;
-  width: 12px;
-  border-radius: 50%;
-  display: inline-block;
-  margin-right: 0.5rem;
-}
-
-.dot.isiZulu {
-  background-color: #d97d0d;
-}
-
-.dot.Sesotho {
-  background-color: #3a7a3a;
-}
-
-.dot.isiXhosa {
-  background-color: #4b4b91;
-}
-
-/* Testimonials */
-.testimonials-section {
-  background-color: #fffdfb;
-  padding: 2.5rem 2rem;
-}
-
-.testimonials {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  justify-content: center;
-}
-
-.testimonial-card {
-  background-color: #fefefe;
-  border-left: 5px solid #c49a6c;
-  padding: 1.25rem;
-  border-radius: 8px;
-  max-width: 300px;
-  font-size: 0.95rem;
-  color: #3f3f3f;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-  text-align: center;
-}
-
-.testimonial-border-top,
-.testimonial-border-bottom {
-  height: 4px;
-  width: 60px;
-  background-color: #d97d0d;
-  margin: 0.5rem auto;
-  border-radius: 2px;
+  border-radius: 10px;
+  border: 2px solid #eaded2;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
+  .plans-grid,
+  .why-grid,
   .story-columns {
     flex-direction: column;
-    padding: 0 1rem;
+    align-items: center;
   }
 
-  .plan-card {
-    width: 100%;
-    max-width: 320px;
+  .button-link {
+    font-size: 0.95rem;
+    padding: 0.4rem 1rem;
   }
 
-  .legend {
-    flex-direction: column;
-    align-items: flex-start;
+  .hero-title {
+    font-size: 2.5rem;
   }
-}
-/* Our Story Enhancements */
-.our-story-title {
-  font-size: 2.25rem;
-  color: #3a2e2a;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 1rem;
-  text-transform: uppercase;
-  position: relative;
-}
-
-.our-story-title::after {
-  content: '';
-  width: 80px;
-  height: 4px;
-  background-color: #d97d0d;
-  display: block;
-  margin: 0.75rem auto 0;
-  border-radius: 2px;
-}
-
-.our-story-text {
-  font-size: 1.05rem;
-  line-height: 1.8;
-  color: #4d3c35;
-  max-width: 900px;
-  margin: 0 auto;
-  text-align: center;
-  padding: 0 1.5rem;
-}
-
-.our-story-highlight {
-  color: #d97d0d;
-  font-weight: bold;
 }
