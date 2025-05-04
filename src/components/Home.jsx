@@ -1,7 +1,7 @@
 import React from 'react';
 import './Home.css';
 import Map from '../assets/MapOfSA.png';
-import AfricanPattern from '../assets/african.png'; // Add an African pattern background
+import AfricanPattern from '../assets/african.png'; // African pattern background
 
 const Home = () => {
   return (
@@ -12,9 +12,8 @@ const Home = () => {
           <a href="/" className="navbar-brand">Culture Pulse</a>
           <ul className="nav-links">
             <li><a href="/">Home</a></li>
-            {/* Group the rest of the links */}
             <li className="nav-links-right">
-              <a href="/languages"> Learn A Language</a>
+              <a href="/languages">Learn A Language</a>
               <a href="/scanner">AR Scanner</a>
             </li>
           </ul>
@@ -24,7 +23,7 @@ const Home = () => {
       {/* Hero Section */}
       <section className="hero-section" style={{ backgroundImage: `url(${AfricanPattern})` }}>
         <div className="hero-overlay tribal-overlay">
-          <h1 className="hero-title african-text">CULTURE  PULSE</h1>
+          <h1 className="hero-title african-text">CULTURE PULSE</h1>
           <p className="hero-subtitle">Preserving Heritage Through Language</p>
           <div className="african-border"></div>
         </div>
@@ -62,15 +61,38 @@ const Home = () => {
         <div className="story-columns">
           <div className="story-column">
             <p>
-              ZuluLingo was born from the desire to preserve and share the rich linguistic and cultural heritage of the Zulu people.
-              In a world rapidly moving toward globalization, we believe it's essential to protect the soul of indigenous languages.
+              In South Africa and beyond, many young people are growing up unable to speak or understand their indigenous languages. 
+              Urbanization, globalization, and a shift toward dominant languages have led to a slow erosion of linguistic heritage.
             </p>
           </div>
           <div className="story-column">
             <p>
-              We aim to empower both native speakers and language learners by creating a platform that's accessible, beautiful, and meaningful.
-              Our journey continues with each person who discovers the rhythm and richness of isiZulu.
+              Culture Pulse was born out of a desire to reconnect generations with their mother tongues. 
+              We’re not just building a platform—we’re building a movement to reclaim identity, 
+              restore pride, and reawaken the beauty of our cultural languages.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Why It Matters */}
+      <section className="why-matters-section">
+        <h2 className="section-title">
+          <span className="title-decoration">♢</span> Why It Matters <span className="title-decoration">♢</span>
+        </h2>
+        <p className="section-subtitle">Language is more than words—it’s a way of life</p>
+        <div className="why-grid">
+          <div className="why-card">
+            <h3>Identity</h3>
+            <p>Language connects us to who we are and where we come from. It holds our stories, values, and roots.</p>
+          </div>
+          <div className="why-card">
+            <h3>Knowledge</h3>
+            <p>Indigenous languages hold wisdom passed down for generations—from farming techniques to moral lessons.</p>
+          </div>
+          <div className="why-card">
+            <h3>Legacy</h3>
+            <p>By learning and teaching our languages, we ensure that the next generation can carry our legacy forward.</p>
           </div>
         </div>
       </section>
@@ -82,31 +104,6 @@ const Home = () => {
         </h2>
         <div className="map-container">
           <img src={Map} alt="Language Distribution Map" className="map-image" />
-            <div className="legend">
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="testimonials-section">
-        <h2 className="section-title">
-          <span className="title-decoration">✻</span> What Learners Say <span className="title-decoration">✻</span>
-        </h2>
-        <div className="testimonials">
-          <div className="testimonial-card">
-            <div className="testimonial-border-top"></div>
-            <p>"This platform brought me closer to my roots."</p>
-            <strong>Thabang Ndaba</strong>
-            <small>isiZulu Learner</small>
-            <div className="testimonial-border-bottom"></div>
-          </div>
-          <div className="testimonial-card">
-            <div className="testimonial-border-top"></div>
-            <p>"Fun, beautiful, and meaningful learning experience."</p>
-            <strong>Sibongile Dlamini</strong>
-            <small>isiXhosa Learner</small>
-            <div className="testimonial-border-bottom"></div>
-          </div>
         </div>
       </section>
     </div>
